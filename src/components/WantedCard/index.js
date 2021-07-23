@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 
 const brl = Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
 
-export function WantedCard({ title, image, reward, description }) {
+export function WantedCard({ title, image, reward }) {
   return (
     <Card style={{ backgroundColor: '#f8e9d9' }}>
       <CardContent>
@@ -30,10 +30,6 @@ export function WantedCard({ title, image, reward, description }) {
 
         <Typography style={{ color: 'red', textAlign: 'center', fontFamily: 'Western, Roboto, sans-serif' }} variant="h4">
           {brl.format(reward)}
-        </Typography>
-
-        <Typography variant="body2" color="textSecondary" component="p">
-          {description}
         </Typography>
       </CardContent>
     </Card>
