@@ -1,19 +1,19 @@
 import React from 'react'
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { addDog } from '../../redux/actions/dogs'
 
 import FormGroup from '@material-ui/core/FormGroup'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Save from '@material-ui/icons/Save'
 
-import { useDogs } from '../../hooks'
-
 import { HomeButton } from '../../components'
 
 import './index.css'
 
 export const New = () => {
-  const { add } = useDogs()
+  const dispatch = useDispatch()
   const history = useHistory()
 
   const [form, setForm] = React.useState({
@@ -37,7 +37,8 @@ export const New = () => {
         </FormGroup>
 
         <Button size="large" endIcon={<Save />} onClick={() => {
-          add(form)
+          dispatch(addDog(form))
+
           history.push('/dogs')
         }}>
           Adicionar

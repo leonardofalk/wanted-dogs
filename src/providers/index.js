@@ -1,2 +1,2 @@
 export * from './AppProvider'
-export * from './DogsProvider'
+export * from './ReduxProvider'

@@ -1,9 +1,7 @@
-import React from 'react'
+import { ADD_DOG } from '../../types/dogs'
 
-import { DogsContext } from '../../contexts'
-
-export const DogsProvider = ({ children }) => {
-  const [dogs, setDogs] = React.useState([
+export const initialState = {
+  dogs: [
     {
       title: 'Snow White',
       image: 'https://placedog.net/500/500?id=152',
@@ -27,13 +25,14 @@ export const DogsProvider = ({ children }) => {
       image: 'https://placedog.net/500/500?id=174',
       reward: 250000000,
     }
-  ])
+  ],
+}
 
-  const add = newDog => setDogs([...dogs, newDog])
-
-  return (
-    <DogsContext.Provider value={{ dogs, add }}>
-      {children}
-    </DogsContext.Provider>
-  )
+export const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_DOG:
+      return { ...state, dogs: [...state.dogs, action.dog] }
+    default:
+      return state
+  }
 }

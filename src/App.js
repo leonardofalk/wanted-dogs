@@ -2,16 +2,16 @@ import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
 import { TopNavBar } from './components'
-import { AppProvider, DogsProvider } from './providers'
+import { AppProvider, ReduxProvider } from './providers'
 
 function App() {
   return (
-    <BrowserRouter>
-      <DogsProvider>
+    <ReduxProvider>
+      <BrowserRouter>
         <TopNavBar />
         <AppProvider />
-      </DogsProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ReduxProvider>
   );
 }
 

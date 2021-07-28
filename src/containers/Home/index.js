@@ -1,12 +1,11 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
+import { useSelector } from 'react-redux'
 
 import { WantedCard, NewButton } from '../../components'
 
-import { useDogs } from '../../hooks'
-
 export const Home = () => {
-  const { dogs } = useDogs()
+  const dogs = useSelector(state => state.dogsReducer.dogs)
 
   return (
     <>
