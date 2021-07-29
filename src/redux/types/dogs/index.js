@@ -1,1 +1,6 @@
-export const ADD_DOG = '@dogs/ADD_DOG'
+export const ADD_DOG_REQUEST = '@dogs/ADD_DOG_REQUEST'
+export const ADD_DOG_SUCCESS = '@dogs/ADD_DOG_SUCCESS'
+export const ADD_DOG_ERROR = '@dogs/ADD_DOG_ERROR'
+export const FILL_DOGS_REQUEST = '@dogs/FILL_DOGS_REQUEST'
+export const FILL_DOGS_SUCCESS = '@dogs/FILL_DOGS_SUCCESS'
+export const FILL_DOGS_ERROR = '@dogs/FILL_DOGS_ERROR'

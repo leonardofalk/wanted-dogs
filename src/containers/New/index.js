@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux"
-import { addDog } from '../../redux/actions/dogs'
+import { addDogRequest } from '../../redux/actions/dogs'
 
 import FormGroup from '@material-ui/core/FormGroup'
 import TextField from '@material-ui/core/TextField'
@@ -17,7 +17,7 @@ export const New = () => {
   const history = useHistory()
 
   const [form, setForm] = React.useState({
-    title: '',
+    name: '',
     reward: '',
     image: '',
   })
@@ -29,15 +29,15 @@ export const New = () => {
       <HomeButton />
       <form noValidate autoComplete="off">
         <FormGroup>
-          <TextField value={form.title} onChange={setFormValue('title')} id="title" label="Nome" variant="outlined" />
+          <TextField value={form.name} onChange={setFormValue('name')} label="Nome" variant="outlined" />
 
-          <TextField value={form.image} onChange={setFormValue('image')} id="image" label="Imagem" variant="outlined" />
+          <TextField value={form.image} onChange={setFormValue('image')} label="Imagem" variant="outlined" />
 
-          <TextField value={form.reward} onChange={setFormValue('reward')} id="reward" label="Recompensa" variant="outlined" />
+          <TextField value={form.reward} onChange={setFormValue('reward')} label="Recompensa" variant="outlined" />
         </FormGroup>
 
         <Button size="large" endIcon={<Save />} onClick={() => {
-          dispatch(addDog(form))
+          dispatch(addDogRequest(form))
 
           history.push('/dogs')
         }}>
